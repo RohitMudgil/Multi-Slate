@@ -32,8 +32,8 @@ canvas.addEventListener("mousedown", (e) => {
         x: e.clientX,
         y: e.clientY
     }
-    // send data to server
-    socket.emit("beginPath", data); //pc to server
+    // send data to server , pc to server
+    socket.emit("beginPath", data);
 })
 canvas.addEventListener("mousemove", (e) => {
     if (mouseDown) {
@@ -131,7 +131,7 @@ download.addEventListener("click", (e) => {
     a.click();
 })
 
-// listen to data coming from server
+//lsitening data from server , and updating
 socket.on("beginPath", (data) => {
     // data -> data from server
     beginPath(data);
