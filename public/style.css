@@ -35,7 +35,6 @@ body {
     animation-name: scale-tools;
     animation-duration: 1s;
 }
-/* animation */
 @keyframes scale-tools {
     0% {
         transform: scale(0.1);
@@ -44,7 +43,6 @@ body {
         transform: scale(1);
     }
 }
-/* everything inside tools */
 .tools-cont > * {
     display: block;
     width: 4rem;

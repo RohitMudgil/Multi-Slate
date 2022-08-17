@@ -1,18 +1,19 @@
-const express = require("express"); // Access code for express 
-const socket = require("socket.io"); // Access code for socket
+const express = require("express"); // Access
+const socket = require("socket.io");
 
 const app = express(); //Initialized and server ready
 
-app.use(express.static("public")); //public folder m hmtml file h
+app.use(express.static("public"));
 
 let port = process.env.PORT || 5000;
-let server = app.listen(port, () => { //the second is a callback function jst to check
-    console.log("Listening to port" + port); 
+
+let server = app.listen(port, () => {
+    console.log("Listening to port" + port);
 })
 
-let io = socket(server); // instance of server
+let io = socket(server);
 
-io.on("connection", (socket) => { //jaise hi conection bnega frontend se(index.hrml) , callbk fnc chl jayga
+io.on("connection", (socket) => {
     console.log("Made socket connection");
     // Received data
     socket.on("beginPath", (data) => {
